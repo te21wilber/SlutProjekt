@@ -5,46 +5,116 @@
     --dark_green: #A4BC92;
     --black: #353535;
     --white: #E5E5E5;
+    --black_transparent: #35353578;
+    --white_transparent: #e5e5e57f;
 }
 
 body {
     margin: 0;
     padding: 0;
+    font-family: Dongle, 'Courier New', Courier;
+    font-weight:500;
+}
+
+h1{
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: 1.3em;
+}
+
+#head{
+    z-index: 10;
+    position: fixed;
+    padding: 10px;
+    margin: auto;
+    background-color: transparent;
+}
+
+#bar {
+    background-color: var(--white_transparent);
+    display: flex;
+    color: var(--black);
     font-family: Dongle-Light;
-}
-
-
-
-#navigation img{
-    height: 25pt;
-    padding: 30px;
-    float: left;
-}
-
-
-#navigation {
-    background-color: #FFF;
-    color: var(--black);
-    overflow: hidden;
+    font-size: 1em;
+    margin: 10px;
     padding: 20px;
-    width: 100%;
-    z-index: 100;
+    margin: 0 auto;
+    border-radius: 50vh;
+    height: fit-content;
+    z-index: 10;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: fit-content;
+    backdrop-filter: blur(7px);
+    /* box-shadow: var(--black_transparent) 0px 0px 10px; */
+    justify-content: center;
+    align-items:center;
 }
 
-#navigation a{
-    padding: 20px 30px;
+#bar img{
+    height: 50pt;
+    background-color: #ffffff8c;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#bar section{
+    flex: 1 1 auto;
+    background-color: transparent;
+}
+
+#bar section b{
+    display: inline;
     float: left;
-    transition: all .2s ease-in;
+    background-color: transparent;
 }
 
-#navigation a:hover{
-    background-color: var(--black);
-    color: var(--white);
+#bar section h1{
+    font-family: Dongle, 'Courier New', Courier;
+    display: inline;
+    float: left;
+    background-color: transparent;
 }
 
-#navigation .active{
-    background-color: var(--white);
+#bar section ul{
+    float:right;
+    margin: auto;
+    display: inline;
+    background-color: transparent;
+}
+
+#bar section ul li{
+    display: inline;
+    float: right;
+    background-color: transparent;
+}
+
+#bar section ul li a{
+    padding: 10px;
+    border-radius: 50vh;
+    text-decoration: none;
     color: var(--black);
+    transition: all 0.2s ease-in-out;
+    height: 20px;
+    margin-left: 10px;
+    /* background-color: var(--white_transparent); */
+}
+
+#bar section ul li a:hover{
+    background-color: var(--black_transparent);
+    color: var(--white);
+    padding: 10px;
+    text-decoration: none;
 }
 
 
@@ -57,17 +127,102 @@ body {
     background-attachment: fixed;
     background-size: cover;
     top: 0;
-    position: fixed;
+    filter: brightness(80%);
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+#startTitle {
+    line-height: 220%;
+    font-family: Dongle, 'Courier New', Courier;
+    background-color: transparent;
+    color: #FFF;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
-.sticky + .main {
-    padding-top: 60px;
+#startTitle h1 {
+    font-size: 4em;
+}
+
+#features{
+    display: flex;
+}
+
+.card{
+    display: block;
+    background-color: var(--white);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.card h2{
+    margin: 0;
+    padding: inherit;
+}
+
+.card h1{
+    margin: 0;
+    padding: inherit;
+    padding-top: -30px;
+    padding-bottom: -100px;
+}
+
+.card p{
+    margin: 0;
+    padding: inherit;
+}
+
+.small_column{
+    width: 30%; 
+    display: inline-block;
+}
+
+.big_column{
+    width: 70%; 
+    display: inline-block;
+}
+
+.three_column{
+    width: 33%; 
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_item{
+    display: inline-block;
+    margin: 10px;
+    width: 30vh;
+    height: 30vh;
+    border-radius: 4vh;
+    background-color: var(--white_transparent);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+/* .menu_item{
+    height: 40vh;
+    overflow: hidden;
+} */
+
+.menu_item img{
+    width: 30vh;
+    height: 30vh;
+    border-radius: 4vh;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu_item:hover img{
+    object-position: center;
+    height: 50%;
+}
+
+.menu_item p{
+    padding: 0vh 4vh 0vh 4vh;
 }
 
 @media screen and (max-width :600px) {
