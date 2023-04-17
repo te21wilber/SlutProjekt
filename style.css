@@ -1,0 +1,79 @@
+:root {
+    --bright_green: #DDFFBB;
+    --regular_green: #C7E9B0;
+    --darker_green: #B3C99C;
+    --dark_green: #A4BC92;
+    --black: #353535;
+    --white: #E5E5E5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Dongle-Light;
+}
+
+
+
+#navigation img{
+    height: 25pt;
+    padding: 30px;
+    float: left;
+}
+
+
+#navigation {
+    background-color: #FFF;
+    color: var(--black);
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+#navigation a{
+    padding: 20px 30px;
+    float: left;
+    transition: all .2s ease-in;
+}
+
+#navigation a:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#navigation .active{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+
+#startImage{
+    width: 100%;
+    background-image: url("/images/hero.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 0;
+    position: fixed;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .main {
+    padding-top: 60px;
+}
+
+@media screen and (max-width :600px) {
+
+}
+
+@media screen and (max-width :600px) {
+
+}
