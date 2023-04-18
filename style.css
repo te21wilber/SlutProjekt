@@ -30,12 +30,20 @@ p{
     font-size: 1.3em;
 }
 
+#startlogo{
+    display: none;
+}
+
 #head{
     z-index: 10;
     position: fixed;
     padding: 10px;
     margin: auto;
     background-color: transparent;
+}
+
+#hamburgerButton{
+    display: none;
 }
 
 #bar {
@@ -70,19 +78,6 @@ p{
 
 #bar section{
     flex: 1 1 auto;
-    background-color: transparent;
-}
-
-#bar section b{
-    display: inline;
-    float: left;
-    background-color: transparent;
-}
-
-#bar section h1{
-    font-family: Dongle, 'Courier New', Courier;
-    display: inline;
-    float: left;
     background-color: transparent;
 }
 
@@ -167,16 +162,20 @@ p{
     padding: inherit;
 }
 
-.card h1{
-    margin: 0;
-    padding: inherit;
+.card  > * {
     padding-top: -30px;
     padding-bottom: -100px;
+    padding-left: 0.7pc;
 }
 
-.card p{
+.card  ul {
+    padding-left: 1.5pc;
+}
+
+.card h1{
     margin: 0;
-    padding: inherit;
+    padding-top: -30px;
+    padding-bottom: -100px;
 }
 
 .small_column{
@@ -284,9 +283,82 @@ footer {
     }
 }
 
-@media screen and (max-width :700px) {
+@media screen and (max-width :700px) { 
+    #hamburgerButton{
+        display: block;
+        background-color: var(--white_transparent);
+        color: var(--black);
+        margin: 10px;
+        padding: 20px;
+        border-radius: 50vh;
+        z-index: 10;
+        position: fixed;
+        backdrop-filter: blur(7px);
+    }
+
+    #bar{
+        position: absolute;
+        top: -100%;
+        display: block;
+        background-color: var(--white_transparent);
+        color: var(--black);
+        font-family: Dongle-Light;
+        font-size: 1em;
+        margin: 10px;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 2pc;
+        z-index: 10;
+        position: fixed;
+        backdrop-filter: blur(10px);
+        width: calc(100% - 20px);
+        height: fit-content;
+        transition: all 0.2s ease-in-out;
+
+    }
+
+    #bar section img{
+        display: none;
+    }
+
+    #bar section{
+        height: fit-content;
+    }
+
+    #bar section ul{
+        display: absolute;
+        background-color: transparent;
+        padding: 0;
+    }
+    
+    #bar section ul li{
+        display: inline-block;
+        line-height: 300%;
+    }
+    
+    #bar section ul li a{
+        margin: 20px;
+    }
+
+
+    #startTitle{
+        transform: translate(-70%,-90%);
+        width: 60%;
+        line-height: 250%;
+    }
+
+    #startLogo{
+        position: absolute;
+        top: 60vh;
+        height: 30vh;
+        aspect-ratio: 1;
+        display: block;
+        right: 10vw;
+    }
+    
     #mainContent{
         width: 90%;
+        transform: translateX(5%);
     }
 
     .menu_item{
